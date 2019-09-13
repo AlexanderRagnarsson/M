@@ -1,5 +1,3 @@
-position_int = int(input('Input a position between 1 and 10: '))
-
 def display(position):
     """The position is an integer. Displays where the character is located"""
     print('x' * (position-1)  +  'o'  +  'x' * (10-position))
@@ -12,6 +10,7 @@ def move(direction):
     if direction == 'l':
         return -1
 
+position_int = int(input('Input a position between 1 and 10: '))
 
 display(position_int) #Prints current position
 
