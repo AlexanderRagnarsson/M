@@ -1,5 +1,4 @@
 position_int = int(input('Input a position between 1 and 10: '))
-loop_boolean = True
 
 def display(position):
     """The position is an integer. Displays where the character is located"""
@@ -7,13 +6,11 @@ def display(position):
 
 def move(direction):
     """Direction is a string. Returns either 1 ('r') or -1 ('l') that will be used to change the position_int 
-    depending on user input but it returns False to breaks the loop if the input is not r or l"""
+    depending on user input"""
     if direction == 'r':
         return 1
     if direction == 'l':
         return -1
-    else:
-        return False
 
 
 display(position_int) #Prints current position
@@ -22,14 +19,15 @@ print('l - for moving left')
 print('r - for moving right')
 print('Any other letter for quitting')  
 
+loop_boolean = True
 
 while loop_boolean:
     direction_str = input('Input your choice: ')
-    if type(move(direction_str)) == bool:
-        #Breaks the loop after the display function is run since the boolean will now be False
-        loop_boolean = move(direction_str)
-        #Show the position one last time before leaving the while loop
+    if direction_str != 'r' and direction_str != 'l':
+        #Show the position one last time
         display(position_int)   
+        #Makes us leave the while loop
+        loop_boolean = False
     else:
         position_int += move(direction_str)
         #Make sure the position is within our string limit
