@@ -21,8 +21,8 @@ def scrambler(word):
     """
     new_str = word.strip()
 
-    #nothing to swap in a 1 chararcter word
-    if len(new_str) == 1:
+    #nothing to swap in a 1 ir 2 chararcter word
+    if len(new_str) == 1 or len(new_str) == 2:
         return new_str
 
     elif new_str[-1] in string.punctuation: #We have a punctuation at the end
