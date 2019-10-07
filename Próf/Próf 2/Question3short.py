@@ -1,0 +1,3 @@
+def set_from_list(num_list): return [num_list[0]] + [num for index, num in enumerate(num_list[1:]) if num != num_list[index]]
+set1, set2 = set_from_list(sorted([int(i) for i in input('Enter elements of a list separated by space: ').split()])), set_from_list(sorted([int(i) for i in input('Enter elements of a list separated by space: ').split()]))
+print('Set 1:', set1,'\nSet2:', set2, '\nIntersection:', [i for i in set1 if i in set2], '\nUnion:', set_from_list(sorted(set1+ set2))) 

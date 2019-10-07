@@ -1,0 +1,1 @@
+(lambda input1, input2:print('Set 1:', set1,'\nSet 2:', set2, '\nIntersection:', sorted([i for i in set1 if i in set2]), '\nUnion:', sorted(list(set(set1+ set2)))))(sorted(list(set([int(i) for i in input('Enter elements: ').split()]))), sorted(list(set([int(i) for i in input('Enter elements: ').split()]))))
